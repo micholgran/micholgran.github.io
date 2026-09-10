@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>metcn新模特-时尚新锐模特与行业资讯精选平台</title>
+    <meta name="description" content="metcn新模特平台聚焦时尚行业新锐模特、模特经纪公司与品牌选角动态，提供新人模特推荐、行业资讯、专业素养提升指南与实用入行建议，助力时尚产业人才发现与交流。">
+    <meta name="keywords" content="metcn新模特,模特,新锐模特,模特经纪,时尚模特,模特行业,模特入行,模特素养,选角动态,时尚资讯">
+    <link rel="stylesheet" href="data:text/css;base64,Lm5vbmV7fQ==">
+    <style>
+        /* 全局重置与基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: #f9f7f4;
+            color: #2b2b2b;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+        img {
+            max-width: 100%;
+            display: block;
+        }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* 顶部工具条 */
+        .top-bar {
+            background-color: #1e1a17;
+            color: rgba(255,255,255,0.8);
+            font-size: 13px;
+            padding: 8px 0;
+            letter-spacing: 0.3px;
+        }
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .top-bar a {
+            color: rgba(255,255,255,0.85);
+            margin-right: 16px;
+            transition: color 0.2s;
+        }
+        .top-bar a:hover {
+            color: #d8b98a;
+        }
+        .top-bar .top-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .top-bar .top-right span {
+            margin-right: 4px;
+        }
+
+        /* 页眉主导航 */
+        .header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+            flex-wrap: wrap;
+        }
+        .logo h1 {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: #1e1a17;
+            line-height: 1.2;
+        }
+        .logo h1 span {
+            color: #b58a5a;
+            font-weight: 300;
+            margin-left: 2px;
+        }
+        .main-nav ul {
+            display: flex;
+            gap: 32px;
+        }
+        .main-nav ul li a {
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+            padding: 8px 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        .main-nav ul li a:hover,
+        .main-nav ul li a.active {
+            color: #b58a5a;
+            border-bottom-color: #b58a5a;
+        }
+        .header-cta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: #f4f1ec;
+            border-radius: 40px;
+            padding: 4px 6px 4px 16px;
+            border: 1px solid #e8e0d6;
+        }
+        .search-box input {
+            border: none;
+            background: transparent;
+            font-size: 14px;
+            padding: 6px 0;
+            width: 140px;
+            outline: none;
+            color: #2b2b2b;
+        }
+        .search-box button {
+            background: #b58a5a;
+            border: none;
+            color: #fff;
+            border-radius: 40px;
+            padding: 6px 16px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .search-box button:hover {
+            background: #a07447;
+        }
+
+        /* 移动端导航 */
+        .mobile-nav-toggle {
+            display: none;
+            font-size: 28px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #1e1a17;
+        }
+
+        /* 主视觉 Hero */
+        .hero {
+            background: linear-gradient(105deg, #1e1a17 0%, #2b2520 60%, #3b3128 100%);
+            color: #f5efe7;
+            padding: 72px 0 64px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: "";
+            position: absolute;
+            right: -100px;
+            top: 20px;
+            width: 420px;
+            height: 420px;
+            background: radial-gradient(circle, rgba(216,185,138,0.2) 0%, transparent 65%);
+            border-radius: 50%;
+        }
+        .hero .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            position: relative;
+            z-index: 2;
+        }
+        .hero-content {
+            flex: 1 1 480px;
+        }
+        .hero-content .tagline {
+            display: inline-block;
+            background: rgba(216,185,138,0.18);
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 14px;
+            letter-spacing: 1px;
+            color: #d8b98a;
+            margin-bottom: 24px;
+            border: 1px solid rgba(216,185,138,0.3);
+        }
+        .hero-content h2 {
+            font-size: 44px;
+            font-weight: 700;
+            line-height: 1.25;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+        .hero-content p {
+            font-size: 17px;
+            color: rgba(255,255,255,0.75);
+            max-width: 600px;
+            margin-bottom: 32px;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background: #d8b98a;
+            color: #1e1a17;
+            padding: 13px 32px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.25s;
+            border: 1px solid transparent;
+        }
+        .btn-primary:hover {
+            background: #e6cba0;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(216,185,138,0.25);
+        }
+        .btn-outline {
+            background: transparent;
+            color: #f5efe7;
+            padding: 12px 30px;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 16px;
+            border: 1px solid rgba(255,255,255,0.4);
+            transition: all 0.25s;
+        }
+        .btn-outline:hover {
+            border-color: #d8b98a;
+            color: #d8b98a;
+        }
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        .hero-stats .stat-item {
+            text-align: left;
+        }
+        .hero-stats .stat-num {
+            font-size: 28px;
+            font-weight: 700;
+            color: #d8b98a;
+        }
+        .hero-stats .stat-label {
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+            margin-top: 2px;
+        }
+
+        /* 信息板块通用 */
+        .section {
+            padding: 64px 0;
+        }
+        .section-light {
+            background: #ffffff;
+        }
+        .section-dark {
+            background: #f3efe9;
+        }
+        .section-header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            margin-bottom: 36px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1e1a17;
+            position: relative;
+            padding-left: 16px;
+            line-height: 1.3;
+        }
+        .section-title::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 6px;
+            bottom: 6px;
+            width: 4px;
+            background: #b58a5a;
+            border-radius: 4px;
+        }
+        .section-sub {
+            color: #7a6f63;
+            font-size: 15px;
+            margin-top: 8px;
+            max-width: 600px;
+        }
+        .section-link {
+            font-size: 15px;
+            color: #b58a5a;
+            font-weight: 500;
+            border-bottom: 1px solid #b58a5a;
+            padding-bottom: 2px;
+            transition: opacity 0.2s;
+        }
+        .section-link:hover {
+            opacity: 0.7;
+        }
+
+        /* 分类卡片 */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        .category-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 28px 22px;
+            border: 1px solid #ebe3da;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+        }
+        .category-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+        }
+        .category-icon {
+            width: 64px;
+            height: 64px;
+            background: #f3ede5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 30px;
+        }
+        .category-card h3 {
+            font-size: 19px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .category-card p {
+            font-size: 14px;
+            color: #7a6f63;
+            line-height: 1.5;
+        }
+
+        /* 新模推荐卡片 */
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+        .model-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid #ebe3da;
+            transition: all 0.25s;
+        }
+        .model-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 36px rgba(0,0,0,0.08);
+        }
+        .model-photo {
+            background: linear-gradient(135deg, #d8c5b2, #b8a28e);
+            height: 240px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.8);
+        }
+        .model-photo span {
+            font-size: 64px;
+            opacity: 0.6;
+        }
+        .model-badge {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(4px);
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 12px;
+            color: #fff;
+            letter-spacing: 0.5px;
+        }
+        .model-info {
+            padding: 20px 22px 24px;
+        }
+        .model-info h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .model-meta {
+            color: #b58a5a;
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+        .model-skills {
+            font-size: 14px;
+            color: #5c524a;
+            margin-bottom: 16px;
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .model-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .model-tags span {
+            background: #f3ede5;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: #5a4a3a;
+        }
+
+        /* 行业资讯 / 列表 */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        .info-item {
+            background: #fff;
+            padding: 28px;
+            border-radius: 16px;
+            border-left: 4px solid #b58a5a;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+            transition: box-shadow 0.2s;
+        }
+        .info-item:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+        .info-item .info-date {
+            font-size: 13px;
+            color: #9b8a7a;
+            letter-spacing: 0.3px;
+            margin-bottom: 10px;
+        }
+        .info-item h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .info-item p {
+            font-size: 15px;
+            color: #5c524a;
+            line-height: 1.7;
+        }
+
+        /* 素养 / 指南 */
+        .guide-layout {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+        .guide-card {
+            background: #faf7f3;
+            border: 1px solid #e8ddd2;
+            border-radius: 18px;
+            padding: 32px 26px;
+            transition: background 0.2s;
+        }
+        .guide-card:hover {
+            background: #f4eee6;
+        }
+        .guide-card .step-num {
+            font-size: 40px;
+            font-weight: 700;
+            color: #d8b98a;
+            line-height: 1;
+            margin-bottom: 14px;
+            opacity: 0.8;
+        }
+        .guide-card h3 {
+            font-size: 19px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        .guide-card p {
+            font-size: 14px;
+            color: #5c524a;
+            line-height: 1.7;
+        }
+
+        /* 行业数据/亮点 */
+        .highlight-strip {
+            background: #1e1a17;
+            padding: 40px 0;
+            margin: 30px 0;
+        }
+        .highlight-strip .container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 28px;
+        }
+        .highlight-item {
+            flex: 1;
+            text-align: center;
+            min-width: 150px;
+        }
+        .highlight-item .num {
+            font-size: 36px;
+            font-weight: 700;
+            color: #d8b98a;
+        }
+        .highlight-item .label {
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+            margin-top: 6px;
+        }
+
+        /* FAQ */
+        .faq-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: #fff;
+            border-radius: 14px;
+            padding: 24px 28px;
+            margin-bottom: 16px;
+            border: 1px solid #eae2d8;
+            transition: box-shadow 0.2s;
+        }
+        .faq-item:hover {
+            box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+        }
+        .faq-item h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #1e1a17;
+            display: flex;
+            align-items: center;
+        }
+        .faq-item h3::before {
+            content: "Q";
+            background: #b58a5a;
+            color: #fff;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            margin-right: 14px;
+            flex-shrink: 0;
+        }
+        .faq-item p {
+            padding-left: 42px;
+            font-size: 15px;
+            color: #5c524a;
+            line-height: 1.7;
+        }
+
+        /* 页脚 */
+        .footer {
+            background: #1e1a17;
+            color: rgba(255,255,255,0.7);
+            padding: 48px 0 24px;
+            margin-top: 40px;
+        }
+        .footer .container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 32px;
+        }
+        .footer-brand {
+            max-width: 260px;
+        }
+        .footer-brand .logo-text {
+            font-size: 26px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+        .footer-brand p {
+            font-size: 14px;
+            line-height: 1.7;
+        }
+        .footer-links {
+            display: flex;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+        .footer-links h4 {
+            color: #d8b98a;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        .footer-links ul li a {
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+            transition: color 0.2s;
+        }
+        .footer-links ul li a:hover {
+            color: #d8b98a;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 36px;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 13px;
+            color: rgba(255,255,255,0.4);
+        }
+
+        /* 响应式 */
+        @media (max-width: 992px) {
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .model-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .guide-layout {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero-content h2 {
+                font-size: 36px;
+            }
+        }
+        @media (max-width: 768px) {
+            .header .container {
+                height: auto;
+                padding: 14px 24px;
+                gap: 10px;
+            }
+            .main-nav {
+                display: none;
+                width: 100%;
+                order: 3;
+                background: #fff;
+                border-radius: 12px;
+                padding: 10px 0;
+            }
+            .main-nav ul {
+                flex-direction: column;
+                gap: 4px;
+                padding: 0 16px;
+            }
+            .main-nav ul li a {
+                display: block;
+                padding: 12px 8px;
+                border-bottom: 1px solid #f0ebe5;
+            }
+            .main-nav.open {
+                display: block;
+            }
+            .mobile-nav-toggle {
+                display: block;
+            }
+            .search-box {
+                display: none;
+            }
+            .hero {
+                padding: 48px 0;
+            }
+            .hero-content h2 {
+                font-size: 30px;
+            }
+            .hero-stats {
+                gap: 24px;
+            }
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            .category-grid,
+            .model-grid,
+            .guide-layout {
+                grid-template-columns: 1fr;
+            }
+            .footer-links {
+                gap: 30px;
+                flex-direction: column;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 18px;
+            }
+            .section {
+                padding: 40px 0;
+            }
+            .section-title {
+                font-size: 24px;
+            }
+            .hero-content p {
+                font-size: 15px;
+            }
+            .btn-primary,
+            .btn-outline {
+                padding: 10px 20px;
+                font-size: 15px;
+            }
+        }
+    </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 顶部工具条 -->
+<div class="top-bar">
+    <div class="container">
+        <div class="top-left">
+            <a href="#">设为首页</a>
+            <a href="#">收藏本站</a>
+            <span>时尚从这里开始</span>
+        </div>
+        <div class="top-right">
+            <span>新模入驻</span>
+            <span>|</span>
+            <span>经纪人通道</span>
+        </div>
+    </div>
+</div>
+
+<!-- 页眉 -->
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <h1>metcn<span>新模特</span></h1>
+        </div>
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="菜单">☰</button>
+        <nav class="main-nav" id="mainNav">
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">新锐模特</a></li>
+                <li><a href="#">经纪公司</a></li>
+                <li><a href="#">选角动态</a></li>
+                <li><a href="#">素养指南</a></li>
+                <li><a href="#">行业资讯</a></li>
+            </ul>
+        </nav>
+        <div class="header-cta">
+            <div class="search-box">
+                <input type="text" placeholder="搜索模特/品牌">
+                <button>搜索</button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- 主视觉 -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <span class="tagline">✦ 发现下一站超模</span>
+            <h2>新锐力量，正在登场</h2>
+            <p>metcn新模特平台，连接新锐模特与时尚产业。无论你是初入行业的新人，还是寻找新鲜面孔的品牌与经纪，这里都有值得关注的面孔与一手动态。</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn-primary">浏览新模档案</a>
+                <a href="#" class="btn-outline">发布招募需求</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-num">200+</div>
+                    <div class="stat-label">合作经纪机构</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">1,200+</div>
+                    <div class="stat-label">注册新锐模特</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">40+</div>
+                    <div class="stat-label">本季选角项目</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 分类导航 -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <div>
+                <h2 class="section-title">探索板块</h2>
+                <p class="section-sub">按你的兴趣快速进入对应领域</p>
+            </div>
+            <a href="#" class="section-link">全部板块 →</a>
+        </div>
+        <div class="category-grid">
+            <a href="#" class="category-card">
+                <div class="category-icon">👤</div>
+                <h3>新模档案</h3>
+                <p>浏览新锐模特个人资料、风格标签与经纪联系方式</p>
+            </a>
+            <a href="#" class="category-card">
+                <div class="category-icon">🏢</div>
+                <h3>经纪公司与星探</h3>
+                <p>了解行业正规经纪机构，获取专业代理支持</p>
+            </a>
+            <a href="#" class="category-card">
+                <div class="category-icon">🎯</div>
+                <h3>品牌选角动态</h3>
+                <p>及时掌握品牌、设计师与广告拍摄的选角机会</p>
+            </a>
+            <a href="#" class="category-card">
+                <div class="category-icon">📚</div>
+                <h3>素养与提升</h3>
+                <p>台步、镜头感、穿搭与职业规划实用内容</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- 本周新模推荐 -->
+<section class="section section-light">
+    <div class="container">
+        <div class="section-header">
+            <div>
+                <h2 class="section-title">本周焦点新模</h2>
+                <p class="section-sub">编辑精选，值得关注的新鲜面孔</p>
+            </div>
+            <a href="#" class="section-link">查看更多新模 →</a>
+        </div>
+        <div class="model-grid">
+            <div class="model-card">
+                <div class="model-photo">
+                    <span>🖤</span>
+                    <span class="model-badge">新晋推荐</span>
+                </div>
+                <div class="model-info">
+                    <h3>林清越</h3>
+                    <div class="model-meta">女 · 178cm · 平面/走秀</div>
+                    <p class="model-skills">清冷气质，可塑性极强，近期参与独立设计师品牌拍摄，风格跨度广。</p>
+                    <div class="model-tags">
+                        <span>高级脸</span>
+                        <span>可甜可酷</span>
+                        <span>上海</span>
+                    </div>
+                </div>
+            </div>
+            <div class="model-card">
+                <div class="model-photo">
+                    <span>🤍</span>
+                    <span class="model-badge">潜力新人</span>
+                </div>
+                <div class="model-info">
+                    <h3>周屿</h3>
+                    <div class="model-meta">男 · 186cm · 走秀/商业</div>
+                    <p class="model-skills">阳光亲和力，具有运动感外形，适合休闲与户外品牌调性。</p>
+                    <div class="model-tags">
+                        <span>阳光</span>
+                        <span>运动</span>
+                        <span>北京</span>
+                    </div>
+                </div>
+            </div>
+            <div class="model-card">
+                <div class="model-photo">
+                    <span>💫</span>
+                    <span class="model-badge">编辑之选</span>
+                </div>
+                <div class="model-info">
+                    <h3>Nadia 娜迪亚</h3>
+                    <div class="model-meta">女 · 175cm · 高定/艺术</div>
+                    <p class="model-skills">独特混血轮廓，肢体表现力强，多次参与时尚艺术短片合作。</p>
+                    <div class="model-tags">
+                        <span>混血</span>
+                        <span>艺术感</span>
+                        <span>广深</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 行业亮点数据 -->
+<div class="highlight-strip">
+    <div class="container">
+        <div class="highlight-item">
+            <div class="num">75%</div>
+            <div class="label">品牌更倾向启用新模</div>
+        </div>
+        <div class="highlight-item">
+            <div class="num">3~6月</div>
+            <div class="label">新人成长关键期</div>
+        </div>
+        <div class="highlight-item">
+            <div class="num">多城</div>
+            <div class="label">拍摄机会覆盖主要城市</div>
+        </div>
+        <div class="highlight-item">
+            <div class="num">线上</div>
+            <div class="label">面试与casting便捷化</div>
+        </div>
+    </div>
+</div>
+
+<!-- 行业资讯 -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <div>
+                <h2 class="section-title">行业动态与观察</h2>
+                <p class="section-sub">关于模特行业、时尚产业与新人发展的中立资讯</p>
+            </div>
+            <a href="#" class="section-link">更多资讯 →</a>
+        </div>
+        <div class="info-grid">
+            <article class="info-item">
+                <div class="info-date">2025.03.12 · 选角风向</div>
+                <h3>品牌秀场更青睐“自然脸” 新人迎来更多机会</h3>
+                <p>近两年多个国内设计师品牌在选角时逐渐跳出传统标准，倾向于选择有辨识度、有故事感的新面孔。对于刚入行的模特而言，建立个人风格比单纯追求标准尺寸更加重要。</p>
+            </article>
+            <article class="info-item">
+                <div class="info-date">2025.03.08 · 新人关注</div>
+                <h3>新人模特如何准备第一份专业模卡？</h3>
+                <p>模卡是模特入行的第一张名片。建议包含正面、侧面、全身及半身素颜照，并标注身高、三围、鞋码等基础信息。一个清晰专业的模卡能有效提升casting通过率。</p>
+            </article>
+            <article class="info-item">
+                <div class="info-date">2025.03.01 · 产业观察</div>
+                <h3>电商直播与短视频拍摄 催生更多商业模特需求</h3>
+                <p>随着电商内容化，品牌对于会表达、有镜头感的模特需求明显上升。除了传统T台，具备短视频表现力的模特正在成为市场新宠。</p>
+            </article>
+            <article class="info-item">
+                <div class="info-date">2025.02.20 · 经纪视角</div>
+                <h3>正规经纪公司与“野模”中介的区别</h3>
+                <p>正规经纪公司会提供培训、casting推荐与合同保障，而部分非正规中介可能收取高额“模卡费”却不提供实际机会。新人务必核实公司资质，避免盲目缴费。</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- 入行指南 -->
+<section class="section section-dark">
+    <div class="container">
+        <div class="section-header">
+            <div>
+                <h2 class="section-title">新人入行指南</h2>
+                <p class="section-sub">从零开始，一步步搭建你的职业路径</p>
+            </div>
+        </div>
+        <div class="guide-layout">
+            <div class="guide-card">
+                <div class="step-num">01</div>
+                <h3>自我定位</h3>
+                <p>明确你的外形特点与适合方向：平面、走秀、商业拍摄或是局部模特。多拍不同风格测试照，找到自己最自然的状态。</p>
+            </div>
+            <div class="guide-card">
+                <div class="step-num">02</div>
+                <h3>准备专业资料</h3>
+                <p>制作高清素颜模卡、全身/半身照及自我介绍视频。资料保持真实，避免过度修图，这是获得经纪信任的第一步。</p>
+            </div>
+            <div class="guide-card">
+                <div class="step-num">03</div>
+                <h3>寻找正规渠道</h3>
+                <p>通过口碑良好的经纪公司、平台认证的选角信息或行业熟人推荐进入圈子。警惕任何先收费后安排工作的模式。</p>
+            </div>
+            <div class="guide-card">
+                <div class="step-num">04</div>
+                <h3>持续提升素养</h3>
+                <p>保持形体训练、学习表情管理、了解时尚品牌。参加小型秀场或拍摄实践，积累经验同时丰富作品集。</p>
+            </div>
+            <div class="guide-card">
+                <div class="step-num">05</div>
+                <h3>职业规划意识</h3>
+                <p>根据自身特点和市场反馈，逐步确定主攻领域。与经纪人保持良好沟通，理性看待短期机会与长期发展。</p>
+            </div>
+            <div class="guide-card">
+                <div class="step-num">06</div>
+                <h3>保护个人权益</h3>
+                <p>签约前仔细阅读合同条款，明确工作内容、报酬支付与肖像权范围。保留沟通记录，遇到纠纷及时咨询法律专业人士。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 常见问题 FAQ -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <div>
+                <h2 class="section-title">新人常见疑问</h2>
+                <p class="section-sub">关于入行门槛与行业规则的坦诚解答</p>
+            </div>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item">
+                <h3>身高不够标准，还能做模特吗？</h3>
+                <p>传统T台模特对身高有要求，但平面、电商、局部（手/足/发）模特，以及近年来流行的“生活感”风格拍摄，对身高的包容度更高。关键是找到适合你的赛道。</p>
+            </div>
+            <div class="faq-item">
+                <h3>没有经验，如何开始第一步？</h3>
+                <p>建议先从身边资源入手：找摄影师互免创作、参加小型工作室的试镜活动、在正规平台建立线上档案。经验都是从小型实践积累起来的，不必等“完全准备好”。</p>
+            </div>
+            <div class="faq-item">
+                <h3>模特公司要求先交培训费，正常吗？</h3>
+                <p>成熟的经纪公司通常从模特收入中抽成，而不是在签约前收取高额培训费。如果遇到强制收费且无法提供实际项目机会，请务必提高警惕。</p>
+            </div>
+            <div class="faq-item">
+                <h3>模卡需要经常更新吗？</h3>
+                <p>建议每半年到一年更新一次，尤其是外形变化明显时。最新的照片能让选角方了解你当前的真实状态，提高匹配效率。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-brand">
+            <div class="logo-text">metcn新模特</div>
+            <p>聚焦新锐模特发现与成长，搭建新人、经纪与品牌之间的透明桥梁。我们传递真实行业信息，助力每一个有态度的面孔被看见。</p>
+        </div>
+        <div class="footer-links">
+            <div>
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">新模档案</a></li>
+                    <li><a href="#">选角动态</a></li>
+                    <li><a href="#">素养指南</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>商务合作</h4>
+                <ul>
+                    <li><a href="#">品牌合作</a></li>
+                    <li><a href="#">经纪入驻</a></li>
+                    <li><a href="#">摄影师通道</a></li>
+                    <li><a href="#">媒体联系</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>关注我们</h4>
+                <ul>
+                    <li><a href="#">微信公众号</a></li>
+                    <li><a href="#">小红书</a></li>
+                    <li><a href="#">官方微博</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <p>© 2025 metcn新模特平台 · 本页面内容仅供参考，不构成任何职业担保或签约建议</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // 简单的移动端导航切换
+    document.getElementById('mobileNavToggle').addEventListener('click', function() {
+        var nav = document.getElementById('mainNav');
+        nav.classList.toggle('open');
+    });
+</script>
+
+</body>
+  </html>
