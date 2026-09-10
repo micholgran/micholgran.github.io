@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>浪荡女挨cao日常-都市情感观察手记与真实生活记录</title>
+  <meta name="description" content="浪荡女挨cao日常主题站点，记录都市情感关系中的真实片段、生活反思与亲密关系边界探讨。包含日常随笔、情绪观察、关系问答与安全提示。">
+  <meta name="keywords" content="浪荡女挨cao日常,都市情感,亲密关系,生活记录,情感随笔,关系边界">
+  <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', sans-serif;
+      background: #faf8f5;
+      color: #2d2a26;
+      line-height: 1.6;
+    }
+
+    .wrapper {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* 头部 */
+    .site-header {
+      background: #fff;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(4px);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      flex-wrap: wrap;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .logo-main {
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #b34a4a;
+      line-height: 1.2;
+    }
+
+    .logo-sub {
+      font-size: 0.9rem;
+      color: #8a7b72;
+      border-left: 1px solid #d9cec6;
+      padding-left: 14px;
+      display: none;
+    }
+
+    @media (min-width: 640px) {
+      .logo-sub {
+        display: inline-block;
+      }
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #4b3f39;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: #b34a4a;
+    }
+
+    /* 主体区域 */
+    .hero-section {
+      background: #f3eee9;
+      margin: 28px 0 36px;
+      border-radius: 32px;
+      padding: 40px 28px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.6);
+    }
+
+    @media (min-width: 800px) {
+      .hero-section {
+        grid-template-columns: 2fr 1fr;
+        padding: 48px 40px;
+      }
+    }
+
+    .hero-content h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      line-height: 1.2;
+      color: #3a2c26;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-content .intro {
+      font-size: 1.1rem;
+      color: #5e534b;
+      max-width: 600px;
+      margin-bottom: 24px;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      background: #ffffff;
+      border: 1px solid #d3c6bd;
+      padding: 10px 20px;
+      border-radius: 80px;
+      font-weight: 500;
+      color: #3f332d;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: #b34a4a;
+      border-color: #b34a4a;
+      color: #fff;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      border-color: #a34a3a;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(6px);
+      border-radius: 24px;
+      padding: 24px;
+      border: 1px solid #e7dbd2;
+    }
+
+    .hero-card h3 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 14px;
+      color: #443832;
+    }
+
+    .hero-card p {
+      color: #5d5149;
+      font-size: 0.98rem;
+    }
+
+    .quote-tag {
+      margin-top: 16px;
+      background: #efe5de;
+      padding: 14px 16px;
+      border-radius: 20px;
+      font-style: italic;
+      color: #4c3e36;
+      font-size: 0.95rem;
+    }
+
+    /* 内容网格 */
+    .section-title {
+      font-size: 1.9rem;
+      font-weight: 600;
+      margin: 50px 0 20px;
+      color: #2f2621;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-title::after {
+      content: "";
+      height: 2px;
+      background: #d9c9be;
+      flex: 1;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 24px 20px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.02);
+      border: 1px solid #ede4de;
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+
+    .card .emoji-badge {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+      color: #3f332b;
+    }
+
+    .card p {
+      color: #6d5f56;
+      font-size: 0.96rem;
+      margin-top: 6px;
+    }
+
+    .card .meta {
+      display: inline-block;
+      margin-top: 16px;
+      background: #f7f0eb;
+      padding: 4px 12px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      color: #8a6a5b;
+    }
+
+    /* 双栏布局 */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      margin: 40px 0;
+    }
+
+    @media (min-width: 820px) {
+      .two-col {
+        grid-template-columns: 1.6fr 1fr;
+      }
+    }
+
+    .article-list {
+      background: #fff;
+      border-radius: 24px;
+      padding: 24px;
+      border: 1px solid #e9dfd9;
+    }
+
+    .article-item {
+      padding: 18px 0;
+      border-bottom: 1px solid #f0e7e1;
+    }
+
+    .article-item:last-child {
+      border-bottom: none;
+    }
+
+    .article-item h4 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #3f312a;
+      margin-bottom: 6px;
+    }
+
+    .article-item p {
+      color: #6d5b52;
+      font-size: 0.95rem;
+    }
+
+    .date-tag {
+      font-size: 0.75rem;
+      background: #f4ede8;
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 50px;
+      color: #756257;
+      margin-bottom: 8px;
+    }
+
+    .side-box {
+      background: #f3eae4;
+      border-radius: 24px;
+      padding: 24px;
+      border: 1px solid #e3d3c9;
+    }
+
+    .side-box h3 {
+      font-size: 1.5rem;
+      margin-bottom: 18px;
+      color: #41332b;
+    }
+
+    .side-box ul {
+      list-style: none;
+    }
+
+    .side-box li {
+      padding: 12px 0;
+      border-bottom: 1px solid #dacac0;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .side-box li:last-child {
+      border-bottom: none;
+    }
+
+    .side-box .num {
+      background: #fff;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      color: #b34a4a;
+    }
+
+    /* faq */
+    .faq-section {
+      margin: 40px 0 40px;
+      background: #faf4f0;
+      padding: 28px 24px;
+      border-radius: 32px;
+    }
+
+    .faq-item {
+      padding: 16px 0;
+      border-bottom: 1px solid #e6d7ce;
+    }
+
+    .faq-item summary {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #3d2f28;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item p {
+      margin-top: 10px;
+      color: #5f4f46;
+      padding-left: 4px;
+    }
+
+    /* 页脚 */
+    .site-footer {
+      background: #2d2622;
+      color: #c9bdb4;
+      padding: 32px 0;
+      margin-top: 40px;
+      border-radius: 32px 32px 0 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-inner a {
+      color: #d9c4b8;
+      text-decoration: none;
+      margin-right: 16px;
+    }
+
+    .footer-copy {
+      width: 100%;
+      font-size: 0.85rem;
+      opacity: 0.8;
+      border-top: 1px solid #4b3b34;
+      margin-top: 24px;
+      padding-top: 20px;
+    }
+
+    /* 响应式微调 */
+    @media (max-width: 540px) {
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrapper header-inner">
+      <div class="logo-area">
+        <span class="logo-main">浪荡女挨cao日常</span>
+        <span class="logo-sub">都市·关系·手记</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#">首页</a>
+        <a href="#">随笔</a>
+        <a href="#">关系边界</a>
+        <a href="#">问答</a>
+        <a href="#">关于</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrapper">
+    <!-- 首屏 hero -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1>浪荡女挨cao日常<br>不止是标签，更是真实情绪切片</h1>
+        <p class="intro">这里有都市情感中的进退、欲望与自省。用诚实笔触记录亲密关系中的复杂褶皱，不评判、不粉饰，只呈现真实的生活碎片与边界思考。</p>
+        <div class="btn-group">
+          <a href="#" class="btn btn-primary">读取最新手记</a>
+          <a href="#" class="btn">关系安全指南</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3>📌 今日关注</h3>
+        <p>“浪荡”与“日常”之间，是自我探索还是他者目光？我们邀请不同视角写下真实经历与反思。</p>
+        <div class="quote-tag">
+          “身体属于自己，但每一次亲密都应当清晰、自愿、有边界。”
+        </div>
+      </div>
+    </section>
+
+    <!-- 栏目卡片：主题分类 -->
+    <div class="section-title">🌿 探索真实日常</div>
+    <div class="feature-grid">
+      <div class="card">
+        <span class="emoji-badge">🖋️</span>
+        <h3>私人叙事</h3>
+        <p>匿名投稿与个人故事，呈现不同城市、不同年龄段的亲密关系经历，不设道德滤镜。</p>
+        <span class="meta">更新于今日</span>
+      </div>
+      <div class="card">
+        <span class="emoji-badge">⚖️</span>
+        <h3>边界与同意</h3>
+        <p>探讨身体自主权、沟通边界与情感安全。在开放与克制之间寻找健康平衡。</p>
+        <span class="meta">必读系列</span>
+      </div>
+      <div class="card">
+        <span class="emoji-badge">💬</span>
+        <h3>情绪杂货铺</h3>
+        <p>欲望、羞耻、快乐与孤独——那些难以启齿的感受，在这里被认真接住。</p>
+        <span class="meta">匿名讨论</span>
+      </div>
+      <div class="card">
+        <span class="emoji-badge">📖</span>
+        <h3>城市暗涌</h3>
+        <p>从酒吧到深夜公寓，都市浪荡叙事中的真实切片，不浪漫化也不妖魔化。</p>
+        <span class="meta">专栏连载</span>
+      </div>
+    </div>
+
+    <!-- 两栏：最新文章 + 热门阅读 -->
+    <div class="two-col">
+      <div class="article-list">
+        <h3 style="font-size: 1.6rem; margin-bottom: 10px;">📬 最新日常手记</h3>
+        <div class="article-item">
+          <span class="date-tag">昨天 · 匿名</span>
+          <h4>“我以为自己很洒脱，直到他不再回消息”</h4>
+          <p>一段开放式关系结束后的自我复盘：是身体的自由，还是害怕靠近？</p>
+        </div>
+        <div class="article-item">
+          <span class="date-tag">3天前 · 阿鹿</span>
+          <h4>周五晚上的三种约会，哪一种算“挨cao”？</h4>
+          <p>我们如何用身体语言表达需求，又如何在事后面对情绪的余震。</p>
+        </div>
+        <div class="article-item">
+          <span class="date-tag">一周前 · 匿名</span>
+          <h4>浪荡不是罪，但自我欺骗是</h4>
+          <p>从“玩咖”到认清自己需要稳定亲密感，我的心理转变记录。</p>
+        </div>
+        <div class="article-item">
+          <span class="date-tag">专题 · 编辑</span>
+          <h4>安全词汇：每个浪荡女孩都该建立的边界清单</h4>
+          <p>不只是身体，也是情绪上的安全词。我们整理了具体的沟通话术。</p>
+        </div>
+      </div>
+
+      <aside class="side-box">
+        <h3>🔥 热门讨论</h3>
+        <ul>
+          <li><span class="num">1</span> 如何区分“放纵”与“自我探索”？</li>
+          <li><span class="num">2</span> 和固定伴侣之外的人发生关系，需要坦诚吗？</li>
+          <li><span class="num">3</span> 事后情绪低落，是身体在发出警告吗？</li>
+          <li><span class="num">4</span> 都市浪荡生活如何保障安全与健康？</li>
+          <li><span class="num">5</span> “挨cao”一词的羞辱感，我们如何消解？</li>
+        </ul>
+      </aside>
+    </div>
+
+    <!-- 常见问题 / 安全与理解 -->
+    <section class="faq-section">
+      <h2 style="font-size: 2rem; margin-bottom: 20px; color: #3f2c24;">关于“浪荡日常”的诚实问答</h2>
+      <details class="faq-item">
+        <summary><span>✨ 这种生活方式一定是不负责任吗？</span><span style="font-size: 1.4rem;">+</span></summary>
+        <p>不一定。关键在于是否尊重自己和他人的边界、是否知情同意、是否做好安全措施。很多人同时拥有稳定的工作与丰富的情感生活，并不代表不负责任。</p>
+      </details>
+      <details class="faq-item">
+        <summary><span>✨ 如何建立身体与情感的“安全词”？</span><span style="font-size: 1.4rem;">+</span></summary>
+        <p>在进入任何亲密关系前，明确说出自己的底线、偏好和停止信号。比如约定“暂停”代表立刻停止，并关注对方的情绪状态。安全词不只用于性，也用于日常交往。</p>
+      </details>
+      <details class="faq-item">
+        <summary><span>✨ 为什么“日常”记录里有很多矛盾情绪？</span><span style="font-size: 1.4rem;">+</span></summary>
+        <p>因为人本身就是复杂的。快乐与羞耻、主动与被动可能并存。我们呈现这些矛盾，是为了减少孤独感，而不是提供标准答案。</p>
+      </details>
+      <details class="faq-item">
+        <summary><span>✨ 怎样避免在关系里伤害他人或自己？</span><span style="font-size: 1.4rem;">+</span></summary>
+        <p>核心是“持续同意”和“透明沟通”。不要预设对方想法，定期确认彼此感受。同时，尊重自己真实的情绪，如果感到不舒服，允许自己随时退出。</p>
+      </details>
+    </section>
+
+    <!-- 一段关于栏目价值的文字  -->
+    <div style="background: #f1e8e2; border-radius: 28px; padding: 30px 26px; margin: 30px 0;">
+      <h3 style="font-size: 1.6rem; color:#3b2c24;">关于本站 · 记录而非定义</h3>
+      <p style="margin-top: 12px; color: #4d4038; max-width: 800px;">
+        “浪荡女挨cao日常”是一个关注都市女性/性少数群体真实生活状态的独立记录平台。我们相信亲密关系是多元的，但所有关系都应建立在自愿、清醒与尊重之上。这里不提供猎奇视角，只有第一人称的体温与反思。如果你有想倾诉的故事，欢迎匿名投稿。
+      </p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrapper footer-inner">
+      <div>
+        <div style="font-weight: 500; font-size: 1.2rem;">浪荡女挨cao日常</div>
+        <p style="margin-top: 8px; max-width: 360px;">诚实、安全、不评判。记录都市亲密关系的多棱镜。</p>
+      </div>
+      <div>
+        <a href="#">隐私原则</a>
+        <a href="#">投稿指南</a>
+        <a href="#">联系方式</a>
+      </div>
+      <div class="footer-copy">
+        © 2025 日常手记 · 仅代表个人观点 · 倡导安全与尊重
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
